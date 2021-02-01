@@ -1,0 +1,65 @@
+<div class="container">
+
+    <div class='form-group'>
+        <form class="form-group" >
+               <label for='id' class="font-weight-normal">COURSE</label>
+               <input type='number' id='id' name='id' readonly [(ngModel)]='course.Course_id' #idcontrol='ngModel'/><br>
+    
+               <label for='State' class="font-weight-normal">STATE</label>
+               <select id="state" name="state"  required  class="form-control" [(ngModel)]='search.State'>
+                 <option *ngFor="let st of state " value={{st}} >{{st}}</option>
+                </select>
+    
+               <label for='city' class="font-weight-normal">CITY</label>
+               <select id="city" name="city"  required  class="form-control" [(ngModel)]='search.City'>
+                 <option *ngFor="let cc of city " value={{cc}} >{{cc}}</option>
+                </select>
+    
+               <label for='num' class="font-weight-normal">LEVEL</label>
+               <select id="num" name="num"  required  class="form-control" [(ngModel)]='search.Level'>
+                   <option *ngFor="let i of numbers " value={{i}} >{{i}}</option>
+                </select>
+    
+                <label for='mark' class="font-weight-normal">MARK</label>
+                <select id="mark" name="mark"  required  class="form-control" [(ngModel)]='search.Mark'>
+                  <option *ngFor="let mark of marks " value={{mark}} >{{mark}}</option>
+                </select>
+    
+                <button type="submit">Submit</button>           
+        </form>
+      </div>
+    </div>
+      <div class="container">  
+          <table class="table table-sm table-hover">
+        <tr class='btn-success'>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>DateOfBirth</th>
+            <th>MobileNumber</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Qualification</th>
+            <th>YearOfPassing</th>
+              
+          </tr>
+            <tr *ngFor="let dept of user">
+            <td>{{ dept.Id}}</td>
+            <td>{{dept.Name }}</td>
+            <td>{{ dept.Email}}</td>
+            <td>{{dept.DateOfBirth}}</td>
+            <td>{{dept.MobileNumber}}</td>
+            <td>{{dept.City}}</td>
+            <td>{{dept.State}}</td>
+            <td>{{dept.Qualification}}</td>
+            <td>{{dept.YearOfPassing}}</td>
+            </tr>
+        </table>
+        <div class="text-center">
+          
+    <a [routerLink]="['/admindomain',AdminId]" class="btn-primary btn-lg" >BACK</a>
+    
+    
+        </div>
+    </div>
+    

@@ -10,14 +10,14 @@ import { catchError } from'rxjs/operators';
 export class AdminserviceService {
 
   constructor(private httpClient: HttpClient) { }
-  private apiServer = "http://localhost:57196/api";
+url3='http://localhost:51403/api';
 httpOptions = {
 headers: new HttpHeaders({
 'Content-Type': 'application/json'
  })
  }
  AdminLogin(logincredentials): Observable<number> {
-  return this.httpClient.post<number>(this.apiServer + '/Admin_Module/',JSON.stringify(logincredentials),this.httpOptions);
+  return this.httpClient.post<number>(this.url3 + '/Admin_Module/',JSON.stringify(logincredentials),this.httpOptions);
  }
 }
 

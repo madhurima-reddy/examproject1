@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router} from '@angular/router';
 import {IQuestion} from 'src/app/iquestion';
 import { QuestionService} from 'src/app/question.service';
+import {Icourse} from 'src/app/icourse';
+
 
 @Component({
   selector: 'app-addquestion',
@@ -9,6 +11,9 @@ import { QuestionService} from 'src/app/question.service';
   styleUrls: ['./addquestion.component.css']
 })
 export class AddquestionComponent implements OnInit {
+  courses : Icourse[] = [];
+  Courseid: number;
+
   Question:IQuestion={
     Question_id:null,
     Course_id:null,
@@ -36,6 +41,11 @@ export class AddquestionComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    console.log("venky");
+    this.questionserv.getcourses().subscribe((data: Icourse[])=>{
+      console.log(data);
+        this.courses = data;
+    })  
   }
 
 }

@@ -7,15 +7,17 @@ import{HomepageComponent} from './homepage/homepage.component';
 import { AdminloginComponent } from './admin/adminlogin/adminlogin.component';
 import {AdminpageComponent } from './admin/adminpage/adminpage.component';
 import {ViewQuestionsComponent} from './admin/view-questions/view-questions.component';
+import { SearchreportsComponent } from './admin/searchreports/searchreports.component';
+import { RegisteruserComponent } from './user/registeruser/registeruser.component';
 
 
 const routes: Routes = [
   {path:'remove',component:RemovequestionComponent},
   {path:'add',component:AddquestionComponent},
-  {path:'',component:HomepageComponent},
+  {path:'',component:RegisteruserComponent},
   {path:"AdminLogin",component:AdminloginComponent},
   {path:"AdminPage",component:AdminpageComponent},
-  {path:"ViewQuestions",component:ViewQuestionsComponent},
+  {path:"ViewQuestions",component:DisplayquestionComponent},
   {path:'display',component:DisplayquestionComponent}
 
 ];

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminserviceService } from 'src/app/adminservice.service';
 import { Adminlogin } from 'src/app/adminlogin';
+import { ActivatedRoute,Router} from '@angular/router';
 
 @Component({
   selector: 'app-adminlogin',
@@ -14,7 +15,7 @@ export class AdminloginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  OnSubmit(){debugger;
+  OnSubmit(){
     this.regService.AdminLogin(this.credentials).subscribe((data)=>{ 
       if(data==1)
       {
@@ -28,6 +29,5 @@ export class AdminloginComponent implements OnInit {
       }
      })
   }
-
 
 }

@@ -1,0 +1,11 @@
+body {
+    background: url('src\assets\venuerific-why-4b3cc2b86d66b871d1e2e1fb9209507c2748fe0ba288620712a2a1d36c30253e.png') fixed;
+   background-size: cover;
+}
+
+div{
+    text-align: center;
+    font-size: 200%;
+    padding-left:700px;
+    
+}

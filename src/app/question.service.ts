@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
 import {Observable,of} from 'rxjs';
+import {Icourse} from 'src/app/icourse';
 import {IQuestion} from './iquestion';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuestionService {
-  url='http://localhost:61287/api/Questions';
+  url='http://localhost:51403/api/Questions';
+  url2='http://localhost:51403/api';
   httpOptions={
     headers:new HttpHeaders({'Content-Type':'application/json'})
 
@@ -29,6 +31,10 @@ export class QuestionService {
       
       
     }
+    getcourses():Observable<Icourse[]>{
+      return this.http.get<Icourse[]>(this.url2 +"/courses");
+    }​​​​
+
     AddQuestion(que:IQuestion):Observable<IQuestion>{
       return this.http.post<IQuestion>(this.url+"/postquestion",que,this.httpOptions);
   }
