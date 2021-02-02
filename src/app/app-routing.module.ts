@@ -16,7 +16,7 @@ import { UserloginComponent } from './user/userlogin/userlogin.component';
 const routes: Routes = [
   {path:'remove',component:RemovequestionComponent},
   {path:'add',component:AddquestionComponent},
-  {path:'',component:HomepageComponent},
+  {path:'',component:SearchreportsComponent},
   {path:"AdminLogin",component:AdminloginComponent},
   {path:"AdminPage",component:AdminpageComponent},
   {path:"UserLogin",component:UserloginComponent},

@@ -16,6 +16,7 @@ export class UserService {
   addUser(user:IUser):Observable<IUser>{​​​​debugger;  
     return this.http.post<IUser>(this.apiserver+ "/UserReg/",JSON.stringify(user),this.httpOptions);
   }​​​​
+  
 }
 
  
