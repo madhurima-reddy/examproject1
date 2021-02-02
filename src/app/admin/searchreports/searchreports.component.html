@@ -1,23 +1,42 @@
 <div class="container">
+    <form class="form-horizontal" role="form" #userform='ngForm'(ngSubmit)='ViewResult(Courseid,State,City,Minimum_marks)'>
 
     <div class='form-group'>
-        <form class="form-group" >
+        
             <div class="col-sm-9" class="b">
+                <label>Select course</label>
                 <select id="Course_id" class="form-control"  name="Course_id" [(ngModel)] = "Courseid">
                     <option value=" " selected >Select a course</option>
-                    <option *ngFor="let course of courses"  value={{course.Course_id}}>{{course.Course_name}}</option>
+                    <option *ngFor="let course of courses"  value={{course.Course_name}}>{{course.Course_name}}</option>
                 </select>
             </div>
 
             <div class="col-sm-9" class="b">
-                <select id="Course_id" class="form-control"  name="Userid" [(ngModel)] = "Userid">
+                <label>Select state</label>
+                <select id="Course_id" class="form-control"  name="Userid" [(ngModel)] = "State">
                     <option value=" " selected >Select a course</option>
-                    <option *ngFor="let user of users"  value={{user.Userid}}>{{user.State}}</option>
+                    <option *ngFor="let user of users"  value={{user.State}}>{{user.State}}</option>
                 </select>
             </div>
+            <div class="col-sm-9" class="b">
+                <label>Select city</label>
+                <select id="Course_id" class="form-control"  name="Userid" [(ngModel)] = "City">
+                    <option value=" " selected >Select a course</option>
+                    <option *ngFor="let user of users"  value={{user.City}}>{{user.City}}</option>
+                </select>
+            </div>
+            <div class="col-sm-9" class="b">
+                <label>Marks</label>
+                <input type="text" size="80%" id="name2" placeholder="Minimum_marks" class="form-control" name= "second" required autofocus [(ngModel)]="Minimum_marks" />
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-lg btn-block"  [disabled]='userform.invalid'><a routerLink="/displayreports" routerLinkActive="active">Add Question</a></button>
+    
     
                           
-        </form>
+        
       </div>
+    </form>
     </div>
+     
      

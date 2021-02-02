@@ -17,6 +17,7 @@ import { ViewQuestionsComponent } from './admin/view-questions/view-questions.co
 import { SearchreportsComponent } from './admin/searchreports/searchreports.component';
 import { RegisteruserComponent } from './user/registeruser/registeruser.component';
 import { UserloginComponent } from './user/userlogin/userlogin.component';
+import { DisplayreportsComponent } from './admin/displayreports/displayreports.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { UserloginComponent } from './user/userlogin/userlogin.component';
     ViewQuestionsComponent,
     SearchreportsComponent,
     RegisteruserComponent,
-    UserloginComponent
+    UserloginComponent,
+    DisplayreportsComponent
   ],
   imports: [
     BrowserModule,

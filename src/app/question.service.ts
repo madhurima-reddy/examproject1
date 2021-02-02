@@ -3,6 +3,8 @@ import {HttpClient,HttpHeaders} from '@angular/common/http';
 import {Observable,of} from 'rxjs';
 import {Icourse} from 'src/app/icourse';
 import {IQuestion} from './iquestion';
+import { IUser } from './iuser';
+import { Searchstudent } from './searchstudent';
 
 @Injectable({
   providedIn: 'root'
@@ -38,5 +40,13 @@ export class QuestionService {
     AddQuestion(que:IQuestion):Observable<IQuestion>{
       return this.http.post<IQuestion>(this.url+"/postquestion",que,this.httpOptions);
   }
+
+  ViewResult(Courseid,State,City,Minimum_marks):Observable<Searchstudent[]>{
+    console.log(Searchstudent);
+    return this.http.get<Searchstudent[]>(this.url2+"/Reports?"+"Course_name="+Courseid+"&state="+State+"&city="+City+"&marks=18");
+       
+  }
+
+   
 
   }
