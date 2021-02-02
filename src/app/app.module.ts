@@ -16,6 +16,7 @@ import { AdminpageComponent } from './admin/adminpage/adminpage.component';
 import { ViewQuestionsComponent } from './admin/view-questions/view-questions.component';
 import { SearchreportsComponent } from './admin/searchreports/searchreports.component';
 import { RegisteruserComponent } from './user/registeruser/registeruser.component';
+import { UserloginComponent } from './user/userlogin/userlogin.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RegisteruserComponent } from './user/registeruser/registeruser.componen
     AdminpageComponent,
     ViewQuestionsComponent,
     SearchreportsComponent,
-    RegisteruserComponent
+    RegisteruserComponent,
+    UserloginComponent
   ],
   imports: [
     BrowserModule,

@@ -11,16 +11,16 @@ import { ActivatedRoute,Router} from '@angular/router';
 export class AdminloginComponent implements OnInit {
   credentials: Adminlogin= new Adminlogin();
 
-  constructor(private regService : AdminserviceService) { }
+  constructor(private regService : AdminserviceService,private route: Router) { }
 
   ngOnInit(): void {
   }
-  OnSubmit(){
+  OnSubmit(){debugger;
     this.regService.AdminLogin(this.credentials).subscribe((data)=>{ 
       if(data==1)
       {
         alert("Login successful");
-        //this.router.navigateByUrl('Dashboard');
+        this.route.navigateByUrl('/AdminPage');
       }
       else
       {

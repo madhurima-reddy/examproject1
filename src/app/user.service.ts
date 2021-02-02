@@ -7,14 +7,14 @@ import {IUser} from './iuser';
   providedIn: 'root'
 })
 export class UserService {
- private apiserver: 'http://localhost:51403/api';
+ private apiserver= 'http://localhost:51403/api';
   httpOptions={
     headers:new HttpHeaders({'Content-Type':'application/json'})
 };
 
   constructor(private http:HttpClient) { }
-  addUser(user:IUser):Observable<IUser>{​​​​  
-    return this.http.post<IUser>(this.apiserver+ "/UserReg",JSON.stringify(user),this.httpOptions);
+  addUser(user:IUser):Observable<IUser>{​​​​debugger;  
+    return this.http.post<IUser>(this.apiserver+ "/UserReg/",JSON.stringify(user),this.httpOptions);
   }​​​​
 }
 

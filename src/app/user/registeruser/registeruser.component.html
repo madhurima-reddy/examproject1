@@ -1,39 +1,43 @@
-<body>
+
+
+
+ <body>
     <div class="container">
         <form class="form-horizontal" role="form" #userform='ngForm'(ngSubmit)='saveUser(user)'>
-            <h3>Register user</h3>
+            <h3 style="text-align: center;">Register user</h3>
 
             <div class="form-group" [class.has.error]="namecontrol.touched && namecontrol.invalid">
-                <label for="id" class="col-sm-3 control-label" style="color: grey">User_id* </label>
-                <div class="col-sm-9">
-                    <input type="text" size="80%" id="id" placeholder="FullName" class="form-control" name= "userid" required autofocus [(ngModel)]='user.User_id'  #namecontrol='ngModel'/>
+                
+                <div class="col-sm-9" class="b">
+                    <input type="text" size="80%" id="id" placeholder="User id" class="form-control" name= "userid" required autofocus [(ngModel)]='user.User_id'  #namecontrol='ngModel'/>
                 </div>
                 <span class='help-block alert-danger' *ngIf='namecontrol.touched && namecontrol.invalid'>
-                    FullName cannot be blank
+                 Id cannot be blank
+                </span>                
+            </div>
+
+            <div class="form-group" [class.has.error]="namecontrol.touched && namecontrol.invalid">
+               
+                <div class="col-sm-9" class="b">
+                    <input type="text" size="80%" id="name" placeholder="FirstName" class="form-control" name= "first" required autofocus [(ngModel)]='user.Fullname'  #namecontrol='ngModel'/>
+                </div>
+                <span class='help-block alert-danger' *ngIf='namecontrol.touched && namecontrol.invalid'>
+                    FirstName cannot be blank
                 </span>                
             </div>
             <div class="form-group" [class.has.error]="namecontrol.touched && namecontrol.invalid">
-                <label for="id" class="col-sm-3 control-label" style="color: grey">FirstName* </label>
-                <div class="col-sm-9">
-                    <input type="text" size="80%" id="name" placeholder="FullName" class="form-control" name= "first" required autofocus [(ngModel)]='user.Fullname'  #namecontrol='ngModel'/>
+                
+                <div class="col-sm-9" class="b">
+                    <input type="text" size="80%" id="name2" placeholder="SecondName" class="form-control" name= "second" required autofocus [(ngModel)]='user.Secondname'  #namecontrol='ngModel'/>
                 </div>
                 <span class='help-block alert-danger' *ngIf='namecontrol.touched && namecontrol.invalid'>
-                    FullName cannot be blank
-                </span>                
-            </div>
-            <div class="form-group" [class.has.error]="namecontrol.touched && namecontrol.invalid">
-                <label for="id" class="col-sm-3 control-label" style="color: grey">SecondName* </label>
-                <div class="col-sm-9">
-                    <input type="text" size="80%" id="name2" placeholder="FullName" class="form-control" name= "second" required autofocus [(ngModel)]='user.Secondname'  #namecontrol='ngModel'/>
-                </div>
-                <span class='help-block alert-danger' *ngIf='namecontrol.touched && namecontrol.invalid'>
-                    FullName cannot be blank
+                    SecondName cannot be blank
                 </span>                
             </div>
             
             <div class="form-group" [class.has.error]="emailcontrol.touched && emailcontrol.invalid">
-                <label for="email" class="col-sm-3 control-label" style="color: grey">Email* </label>
-                <div class="col-sm-9">
+                
+                <div class="col-sm-9" class="b">
                     <input type='text' id='email' placeholder="Email" name='email' class="form-control" required [(ngModel)]='user.Email' #emailcontrol='ngModel'/>
                 </div>
                 <span class='help-block alert-danger' *ngIf='emailcontrol.touched && emailcontrol.invalid'>
@@ -41,8 +45,8 @@
                 </span>
             </div>
             <div class="form-group" [class.has.error]="passcontrol.touched && passcontrol.invalid">
-                <label for="password" class="col-sm-3 control-label" style="color: grey">Password*</label>
-                <div class="col-sm-9">
+               
+                <div class="col-sm-9" class="b">
                     <input type="password" id="password" placeholder="Password" class="form-control"  name='pass' required [(ngModel)]='user.Password' #passcontrol='ngModel'/>
                 </div>
                 <span class='help-block alert-danger' *ngIf='passcontrol.touched && passcontrol.invalid'>
@@ -51,8 +55,8 @@
             </div>        
             
             <div class="form-group" [class.has.error]="mobilecontrol.touched && mobilecontrol.invalid">
-                <label for="phoneNumber" class="col-sm-3 control-label" style="color: grey">Phone number </label>
-                <div class="col-sm-9">
+                
+                <div class="col-sm-9" class="b">
                     <input type="phoneNumber" id="phoneNumber" placeholder="Phone number" name="phoneNumber " class="form-control" required [(ngModel)]='user.Phone_no' #mobilecontrol='ngModel'/>
                     
                 </div>
@@ -62,21 +66,21 @@
             </div>
 
             <div class="form-group" [class.has.error]="citycontrol.touched && citycontrol.invalid">
-                <label for="city" class="col-sm-3 control-label" style="color: grey">City*</label>
-                <div class="col-sm-9">
+                
+                <div class="col-sm-9" class="b">
                     <input type="text" id="city" class="form-control" name="city" placeholder="city" required [(ngModel)]='user.City' #citycontrol='ngModel'/>
                   
                 </div>
             </div>
-            <div class="form-group">
-                <label for="birthDate" class="control-label col-sm-3" style="color: grey">Date of birth</label>
-                <div class="col-sm-9">
+            <div class="form-group" >
+                
+                <div class="col-sm-9" class="b">
                     <input type='date' id='dob' class="form-control" name='dob' required [(ngModel)]='user.Date_of_Birth' #dobcontrol='ngModel'/>
                 </div>
             </div>
             <div class="form-group">
-                <label for="state" class="control-label col-sm-2" style="color: grey">State*</label>
-                <div class="col-sm-9">
+                
+                <div class="col-sm-9" class="b">
                     <input type="text" id="State" class="form-control" placeholder="State" name='state' required [(ngModel)]='user.State' #statecontrol='ngModel'/>
 
                 </div>
@@ -86,8 +90,8 @@
             </div>
             
             <div class="form-group"  [class.has.error]="qualcontrol.touched && qualcontrol.invalid">
-                <label for="qualification" class="col-sm-3 control-label" style="color: grey">Qualification*</label>
-                <div class="col-sm-9">
+                
+                <div class="col-sm-9" class="b">
                     <input type="text" id="qualification" class="form-control" name='qual' placeholder="Qualification" required [(ngModel)]='user.Qualification' #qualcontrol='ngModel'/>
 
                 </div>
@@ -96,8 +100,8 @@
                 </span>
             </div>
             <div class="form-group"  [class.has.error]="yearcontrol.touched && yearcontrol.invalid">
-                <label for="yearOfPassing" class="col-sm-3 control-label" style="color: grey">YearOfPassing*</label>
-                <div class="col-sm-9">
+                
+                <div class="col-sm-9" class="b">
                     <input type="text" id="yearOfPassing" class="form-control" name='year' placeholder="Year of birth" required [(ngModel)]='user.Year_Of_Passing' #yearcontrol='ngModel'/>
 
                 </div>
@@ -109,7 +113,8 @@
             
             
             
-            <button type="submit" class="btn btn-primary btn-block" [disabled]='userform.invalid'>Register</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]='userform.invalid'>Register</button>
+            
         </form>
     </div>
-</body> 
+</body>  

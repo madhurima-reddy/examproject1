@@ -24,7 +24,7 @@ export class RegisteruserComponent implements OnInit {
     Year_Of_Passing:null};
 
   constructor(private userservice:UserService,private route: Router) { }
-  saveUser(user:IUser){​​​​    
+  saveUser(user:IUser){debugger;​​​​    
     this.userservice.addUser(this.user).subscribe(()=>
     {​​​​      
       alert("Record Added");     

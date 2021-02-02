@@ -1,11 +1,24 @@
 body {
-    background: url('src\assets\venuerific-why-4b3cc2b86d66b871d1e2e1fb9209507c2748fe0ba288620712a2a1d36c30253e.png') fixed;
-   background-size: cover;
-}
-
-div{
-    text-align: center;
-    font-size: 200%;
-    padding-left:700px;
+    margin: 0;
+    padding: 0;
+    background: url('src\assets\signup-bg.jpg') fixed;
+    background-size: cover;
+    height: 100vh;
+  }
+  #login .container #login-row #login-column #login-box {
+    margin-top: 220px;
+    max-width: 600px;
+    height: 350px;
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
     
-}
+  
+  }
+  #login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+    
+  }
+  #login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+  
+  }
