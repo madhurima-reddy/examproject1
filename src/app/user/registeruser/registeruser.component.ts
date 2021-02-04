@@ -22,7 +22,7 @@ export class RegisteruserComponent implements OnInit {
     State:null,
     Qualification:null,
     Year_Of_Passing:null};
-    state=new Array("TamilNadu","Kerala","Karnataka","Andhra Pradesh","Arunachal Pradesh","	Assam","	Bihar","Chhattisgarh",
+    state=new Array("TamilNadu","Kerala","Karnataka","Andhra","Arunachal Pradesh","	Assam","	Bihar","Chhattisgarh",
     "Goa","Gujarat","Haryana","Himachal Pradesh","	Jharkhand","	Madhya Pradesh","Maharashtra","	Meghalaya",	"Manipur","	Nagaland",
     "West Bengal","Uttarakhand","	Uttar Pradesh","Tripura","	Telangana","	Sikkim","Rajasthan","	Odisha","	Punjab","Mizoram");
 

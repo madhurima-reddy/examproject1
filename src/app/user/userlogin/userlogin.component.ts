@@ -24,9 +24,14 @@ export class UserloginComponent implements OnInit {
       if(data!=null)
       {
         alert("Login Successful");
+        this.cred=data;
+        console.log(this.cred);
+        sessionStorage.setItem('userid',this.cred.User_id.toString());
+        console.log(sessionStorage.getItem('userid'));
         
         this.route.navigate(['/courses']);
-        sessionStorage.setItem('userid',this.cred.User_id.toString());
+        
+
         
       }
       else{

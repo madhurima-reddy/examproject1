@@ -16,7 +16,7 @@ import {StarttestComponent} from './user/starttest/starttest.component';
 import {CoursesComponent} from './courses/courses.component';
 import {CoursesInfoComponent} from './courses-info/courses-info.component';
 import { HomeComponent } from './home/home.component';
-import { ReportCardComponent } from './report-card/report-card.component';
+import {ReportCardComponent} from './report-card/report-card.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactComponent } from './contact/contact.component';
 
@@ -40,7 +40,8 @@ const routes: Routes = [
   {path:'courses/:Course_id',component:CoursesComponent},
   {path:'coursesinfo',component:CoursesInfoComponent},
   {path: 'test/:Course_id', component:TestComponent } ,
-  {path:'courses',component:CoursesComponent}
+  {path:'courses',component:CoursesComponent},
+  {path:'reports',component:ReportCardComponent}
 
 ];
 

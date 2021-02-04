@@ -17,8 +17,8 @@ headers: new HttpHeaders({
 'Content-Type': 'application/json'
  })
  }
- Userlogin(logincredentials): Observable<number> {
-  return this.httpClient.post<number>(this.apiServer + '/User_Module1/',JSON.stringify(logincredentials),this.httpOptions);
+ Userlogin(logincredentials): Observable<IUser> {
+  return this.httpClient.post<IUser>(this.apiServer + '/User_Module1/',JSON.stringify(logincredentials),this.httpOptions);
  }
 
  getUsers():Observable<IUser[]>{

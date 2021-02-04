@@ -7,5 +7,5 @@ export class ReportCard {
     public Level_2_Marks: number;
     public Level_3_Marks: number;
     public Test_Date: Date;
-    public Course: Icourse;
+    //public Course: Icourse;
 }

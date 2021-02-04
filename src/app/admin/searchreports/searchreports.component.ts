@@ -29,7 +29,7 @@ export class SearchreportsComponent implements OnInit {
     Minimum_marks:null,
 }
 
-state=new Array("TamilNadu","Kerala","Karnataka","Andhra Pradesh","Arunachal Pradesh","	Assam","	Bihar","Chhattisgarh",
+state=new Array("TamilNadu","Kerala","Karnataka","Andhra","Arunachal Pradesh","	Assam","	Bihar","Chhattisgarh",
     "Goa","Gujarat","Haryana","Himachal Pradesh","	Jharkhand","	Madhya Pradesh","Maharashtra","	Meghalaya",	"Manipur","	Nagaland",
     "West Bengal","Uttarakhand","	Uttar Pradesh","Tripura","	Telangana","	Sikkim","Rajasthan","	Odisha","	Punjab","Mizoram");
 constructor(private route: Router,private router:ActivatedRoute,private questionserv:QuestionService,

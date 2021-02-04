@@ -52,7 +52,7 @@
                
                 <div class="col-sm-9" class="b">
                     <select id="Course_id" class="form-control"  name="Course_id" [(ngModel)] = "Courseid">
-                        <option value=" " selected >Select a course</option>
+                        <option value="select a course" selected="true">Select a course</option>
                         <option *ngFor="let course of courses"  value={{course.Course_id}}>{{course.Course_name}}</option>
                     </select>
                 </div>
