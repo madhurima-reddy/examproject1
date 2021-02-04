@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router} from '@angular/router';
-import {IQuestion} from 'src/app/iquestion';
-import { QuestionService} from 'src/app/question.service';
+import {IQuestion} from 'src/app/classes/iquestion';
+import { QuestionService} from 'src/app/services/question.service';
 
 
 
@@ -21,7 +21,7 @@ export class RemovequestionComponent implements OnInit {
     Option_2:null,
     Option_3:null,
     Option_4:null,    
-    Correct_Answer:null,    
+    Correct_answer:null,    
     }
 
   constructor(private questionserv:QuestionService,

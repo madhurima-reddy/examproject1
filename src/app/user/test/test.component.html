@@ -1,0 +1,124 @@
+
+<body >
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="collapse navbar-collapse" id="navbarNav" style="font-size: 20px; ">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a style="color: whitesmoke;" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="nav-item active">
+                <a style="color: whitesmoke;"class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
+            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="nav-item active">
+                <a  style="color: whitesmoke;" class="nav-link" href="#">Contact<span class="sr-only">(current)</span></a>
+            </li>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="topnav-right">
+                <li class="nav-item active">
+                    <a  style="color: whitesmoke;" class="nav-link" href="UserLogin">Logout<span class="sr-only">(current)</span></a>
+                </li>
+        </div>
+            
+            
+          </ul>
+        </div>
+      </nav>
+      <br>
+    <form  style="padding-left: 28px;" class="form-horizontal" class="form" #userform='ngForm'  (ngSubmit)='startTest()'>
+        <!-- <h1 style="text-align: center; color: white;">Quiz</h1> -->
+        <div class='form-group'>
+            <label class="control-label col-sm-0" for ='Level_id' style="color:black">Level:</label> {{Level_id}}
+           
+        </div> 
+        Timer: {{display}}
+ 
+
+        <ng-template #Q> 
+            <div style="text-align:left; padding-right: 35%;" >
+                
+                <div class="py-2 h25" style="font: size 19px;" style="text-align:left;"><b> {{Questions[QNo]?. Question_No}} <span>. </span>{{Questions[QNo]?.Question1}}</b></div><br>
+              
+                <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3 form-group" style="text-align: left;" id="options">
+                     <label class="options"><input type="radio" name="a" value ="1" required #a="ngModel" [(ngModel)] = "r1"> {{Questions[QNo]?.Option_1}}  <span class="checkmark"></span>
+                     </label>
+                     <br>
+                      <label class="options"><input type="radio" name="a" value="2" required #a="ngModel" [(ngModel)] = "r1"> {{Questions[QNo]?.Option_2}}  <span class="checkmark"></span>
+                     </label><br> 
+                     <label class="options"><input type="radio" name="a" value="3" required #a="ngModel" [(ngModel)] = "r1"> {{Questions[QNo]?.Option_3}}  <span class="checkmark"></span>
+                     </label> <br>
+                     <label class="options"><input type="radio" name="a" value="4" required #a="ngModel" [(ngModel)] = "r1"> {{Questions[QNo]?.Option_4}} <span class="checkmark"></span> </label>
+                   <br>
+                   <div *ngIf="!a?.valid && (a?.dirty || a?.touched)" class="error">
+                    <div *ngIf="a.errors.required">
+                      Gender is required
+                    </div>
+                  </div>
+                   
+                     Correct_Answer: {{Questions[QNo]?.Correct_answer}}
+        
+                    </div>
+           
+            <div>
+             
+               <br> <input type="button"  class="btn btn-dark btn-success"  value="Previous" (click)="Previous()">
+               &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  
+               &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; 
+                &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;
+               <input type="button" class="btn btn-dark btn-success"   style="padding-right: 4%; vertical-align: middle;"  [disabled]="QNo>=9 ? true : false" value="Next" (click)="Next()" >
+             
+               <input type="button" class="btn btn-dark btn-success poz"  value="Submit Test" (click)="submitTest()">
+               
+            </div>
+        </div>
+        </ng-template>
+        <div class="container mt-sm-5 my-1">
+        
+            <div class="question ml-sm-5 pl-sm-5 pt-2">
+                <!-- <button type="submit"  class="btn btn-primary btn-success" [disabled]='userform.invalid'>Start Test</button> <br><br> -->
+                <div *ngIf = "TestStatus then Q else Result"></div>
+               
+        </div>
+         <!-- <button type="submit" class="btn btn-primary btn-success" [disabled]='userform.invalid'>Submit</button>  -->
+            
+        </div> 
+            <ng-template #Result>
+            Marks scored: {{this.Marks}}/10
+            <br>
+            <br>
+                Level 1 Score: {{this.level1_Marks}}
+                <br><br><br>
+                Level 2 Score: {{this.level2_Marks}}
+                <br><br><br>
+                Level 3 Score: {{this.level3_Marks}}
+                <br><br><br>
+        
+            {{Message}}
+            <br>
+            FinalStatus: {{FinalStatus}}
+        
+          
+                 
+            <!-- <input  type="button"  class="btn btn-dark btn-success poz" value="Logout"> -->
+            <br>
+            <div *ngIf = "ResultStatus">
+                <input  type="button"  class="btn btn-dark btn-success poz" value="Continue" (click)="Continue()">
+             </div>
+             <!-- <div *ngIf = "!ResultStatus">
+                <input  type="button"  class="btn btn-dark btn-success poz" value="Home" [routerLink]="['/homepage/]">
+             </div> -->
+        </ng-template>
+        
+            </form>
+           
+        </body>
+        <!-- "ResultStatus? true : false" -->

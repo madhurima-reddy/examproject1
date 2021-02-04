@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import {IQuestion} from 'src/app/iquestion';
-import { QuestionService} from 'src/app/question.service';
+import {IQuestion} from 'src/app/classes/iquestion';
+import { QuestionService} from 'src/app/services/question.service';
+import { ActivatedRoute,Router} from '@angular/router';
 
 
 @Component({
@@ -11,11 +12,12 @@ import { QuestionService} from 'src/app/question.service';
 })
 export class DisplayquestionComponent implements OnInit {
  
-  constructor(public service:QuestionService) { }
+  constructor(public service:QuestionService,private route: Router) { }
   Questions:any = []; 
   ngOnInit(): void {
     this.service.getAll().subscribe((data)=>{
       this.Questions = data;
+      console.log(data);
   })  
   }
   deleteQuestion(Question_id){
@@ -23,6 +25,7 @@ export class DisplayquestionComponent implements OnInit {
     this.service.deleteQuestion(Question_id).subscribe(data=>{
               
         alert("Question deleted");
+        this.route.navigate(['display']);
       
     });
   }

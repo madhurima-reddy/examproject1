@@ -1,0 +1,23 @@
+/* .container{
+    height: 500px;
+  width: auto;
+  background-color:  lemonchiffon;
+  text-align:left;  
+  
+  padding: 16px;
+
+
+} */
+body{
+    background: url('src\assets\School-Math-scaled.jpg') fixed;
+
+    height: 100vh;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .poz
+{
+position:absolute;bottom:5px;
+}

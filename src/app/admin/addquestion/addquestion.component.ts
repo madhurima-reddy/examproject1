@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router} from '@angular/router';
-import {IQuestion} from 'src/app/iquestion';
-import { QuestionService} from 'src/app/question.service';
-import {Icourse} from 'src/app/icourse';
+import {IQuestion} from 'src/app/classes/iquestion';
+import { QuestionService} from 'src/app/services/question.service';
+import {Icourse} from 'src/app/classes/icourse';
+
 
 
 @Component({
@@ -24,10 +25,10 @@ export class AddquestionComponent implements OnInit {
     Option_2:null,
     Option_3:null,
     Option_4:null,    
-    Correct_Answer:null,    
+    Correct_answer:null,    
     }
   constructor(private questionserv:QuestionService,
-    private router: Router,private route:ActivatedRoute) { }
+    private router: Router,private route:ActivatedRoute,) { }
     saveQuestion(Que:IQuestion)
     {
       
@@ -36,6 +37,8 @@ export class AddquestionComponent implements OnInit {
         {
           console.log(data," Updated Successfully");
           alert("Question Added");
+          this.router.navigateByUrl('/display');
+          
         }
       });
     }

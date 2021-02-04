@@ -1,5 +1,38 @@
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="collapse navbar-collapse" id="navbarNav" style="font-size: 20px; ">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a style="color: whitesmoke;" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="nav-item active">
+                <a style="color: whitesmoke;"class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
+            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="nav-item active">
+                <a  style="color: whitesmoke;" class="nav-link" href="#">Contact<span class="sr-only">(current)</span></a>
+            </li>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="topnav-right">
+                <li class="nav-item active">
+                    <a  style="color: whitesmoke;" class="nav-link" href="AdminLogin">Logout<span class="sr-only">(current)</span></a>
+                </li>
+        </div>
+            
+            
+          </ul>
+        </div>
+      </nav>
     <div class="container">
         <form class="form-horizontal" role="form" #userform='ngForm'(ngSubmit)='saveQuestion(Question)'>
             <h3 style="text-align: center;">Add Question</h3>
@@ -105,7 +138,7 @@
             <div class="form-group" [class.has.error]="citycontrol.touched && citycontrol.invalid">
                 
                 <div class="col-sm-9" class="b">
-                    <input type="text" id="city" class="form-control" name="city" placeholder="Correct Answer" required [(ngModel)]='Question.Correct_Answer' #citycontrol='ngModel'/>
+                    <input type="text" id="city" class="form-control" name="city" placeholder="Correct Answer" required [(ngModel)]='Question.Correct_answer' #citycontrol='ngModel'/>
                   
                 </div>
                 <span class='help-block alert-danger' *ngIf='citycontrol.touched && citycontrol.invalid'>
@@ -116,7 +149,7 @@
             
             
             
-            <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]='userform.invalid'>Add Question</button>
+            <button type="submit" class="btn btn-dark btn-lg btn-block"  [disabled]='userform.invalid'>Add Question</button>
         
             <br>
            

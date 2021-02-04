@@ -1,0 +1,15 @@
+
+
+.poz
+{
+position:absolute;bottom:15px; right:10px;
+}
+body{
+    background: url('src\assets\books3.jpg') fixed;
+   
+    height: 100vh;
+    font-size: 24px;
+    background-position:bottom;
+    background-repeat: no-repeat;
+    background-size:100%;
+  }

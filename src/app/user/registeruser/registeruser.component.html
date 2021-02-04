@@ -2,6 +2,23 @@
 
 
  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="collapse navbar-collapse" id="navbarNav" style="font-size: 20px; ">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a style="color: whitesmoke;" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="nav-item active">
+                <a style="color: whitesmoke;"class="nav-link" href="#">About us<span class="sr-only">(current)</span></a>
+            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="nav-item active">
+                <a  style="color: whitesmoke;" class="nav-link" href="#">Contact us<span class="sr-only">(current)</span></a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+      <br><br>
     <div class="container">
         <form class="form-horizontal" role="form" #userform='ngForm'(ngSubmit)='saveUser(user)'>
             <h3 style="text-align: center;">Register user</h3>
@@ -78,16 +95,23 @@
                     <input type='date' id='dob' class="form-control" name='dob' required [(ngModel)]='user.Date_of_Birth' #dobcontrol='ngModel'/>
                 </div>
             </div>
+        
             <div class="form-group">
                 
                 <div class="col-sm-9" class="b">
-                    <input type="text" id="State" class="form-control" placeholder="State" name='state' required [(ngModel)]='user.State' #statecontrol='ngModel'/>
+                    <select id="state" name="state" placeholder="select state" required  class="form-control" [(ngModel)]='user.State'>
+                        <option value="" >select a state</option>
+                        <option *ngFor="let st of state " value={{st}} >{{st}}</option>
+                       </select>
 
                 </div>
                 <span class='help-block alert-danger' *ngIf='citycontrol.touched && citycontrol.invalid'>
                     state cannot be blank
                 </span>
             </div>
+
+            
+
             
             <div class="form-group"  [class.has.error]="qualcontrol.touched && qualcontrol.invalid">
                 

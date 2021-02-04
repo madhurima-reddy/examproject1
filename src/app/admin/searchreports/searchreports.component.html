@@ -1,42 +1,116 @@
-<div class="container">
-    <form class="form-horizontal" role="form" #userform='ngForm'(ngSubmit)='ViewResult(Courseid,State,City,Minimum_marks)'>
-
-    <div class='form-group'>
-        
-            <div class="col-sm-9" class="b">
-                <label>Select course</label>
-                <select id="Course_id" class="form-control"  name="Course_id" [(ngModel)] = "Courseid">
-                    <option value=" " selected >Select a course</option>
-                    <option *ngFor="let course of courses"  value={{course.Course_name}}>{{course.Course_name}}</option>
-                </select>
-            </div>
-
-            <div class="col-sm-9" class="b">
-                <label>Select state</label>
-                <select id="Course_id" class="form-control"  name="Userid" [(ngModel)] = "State">
-                    <option value=" " selected >Select a course</option>
-                    <option *ngFor="let user of users"  value={{user.State}}>{{user.State}}</option>
-                </select>
-            </div>
-            <div class="col-sm-9" class="b">
-                <label>Select city</label>
-                <select id="Course_id" class="form-control"  name="Userid" [(ngModel)] = "City">
-                    <option value=" " selected >Select a course</option>
-                    <option *ngFor="let user of users"  value={{user.City}}>{{user.City}}</option>
-                </select>
-            </div>
-            <div class="col-sm-9" class="b">
-                <label>Marks</label>
-                <input type="text" size="80%" id="name2" placeholder="Minimum_marks" class="form-control" name= "second" required autofocus [(ngModel)]="Minimum_marks" />
-            </div>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="collapse navbar-collapse" id="navbarNav" style="font-size: 20px; ">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a style="color: whitesmoke;" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="nav-item active">
+                <a style="color: whitesmoke;"class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
+            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="nav-item active">
+                <a  style="color: whitesmoke;" class="nav-link" href="#">Contact<span class="sr-only">(current)</span></a>
+            </li>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="topnav-right">
+                <li class="nav-item active">
+                    <a  style="color: whitesmoke;" class="nav-link" href="AdminLogin">Logout<span class="sr-only">(current)</span></a>
+                </li>
+        </div>
             
-            <button type="submit" class="btn btn-primary btn-lg btn-block"  [disabled]='userform.invalid'><a routerLink="/displayreports" routerLinkActive="active">Add Question</a></button>
-    
-    
-                          
+            
+          </ul>
+        </div>
+      </nav>
+      <br>
+      <br>
+    <div class="container">
         
-      </div>
-    </form>
+        <form class="form-horizontal" role="form" #userform='ngForm'(ngSubmit)='ViewResult(Reports) '>
+            <h3>Search Students</h3>
+
+        <div class='form-group'>
+            
+                <div class="col-sm-9" class="b">
+                    <label>Select course</label>
+                    <select id="Course_id" class="form-control"  name="Course_id" [(ngModel)] = "Reports.Course_name">
+                        <option value=" " selected >Select a course</option>
+                        <option *ngFor="let course of courses"  value={{course.Course_name}}>{{course.Course_name}}</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-9" class="b">
+                    <label>Select state</label>
+                    <select id="Course_id" class="form-control"  name="Userid" [(ngModel)] = "Reports.State">
+                        <option  disabled="" selected="">Select a State</option>
+                        <option *ngFor="let st of state"  value={{st}}>{{st}}</option>
+                    </select>
+                </div>
+                <div class="col-sm-9" class="b">
+                    <label>Select city</label>
+                    <input type="text" size="80%" id="city" placeholder="Enter your city" class="form-control" name= "city" required autofocus [(ngModel)]="Reports.City" />
+                </div>
+                <div class="col-sm-9" class="b">
+                    <label>Marks</label>
+                    <input type="text" size="80%" id="name2" placeholder="Minimum_marks" class="form-control" name= "second" required autofocus [(ngModel)]="Reports.Minimum_marks" />
+                </div>
+                <br>
+                
+                <button type="submit" class="btn btn-primary btn-lg btn-block"  >Search</button>
+        
+        
+                            
+            
+            </div>
+       
+       </form>
     </div>
+    <br>
+    
+
+    
+     <div *ngIf="studentFound">  
+        <h3 style="color: whitesmoke;">Student Records</h3>
+        
+        
+        <table>
+            
+            
+            <tr>
+                <th>Fullname</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>City</th>
+                <th>State</th>            
+            </tr>
+            <tr *ngIf="!studentFound"> <td>Records Will be displayed if found !!!</td> </tr>
+            <tr *ngFor="let s of students">
+                <td>{{s.Fullname}}</td>
+                <td>{{s.Email}}</td>
+                <td>{{s.Phone_no}}</td>
+                <td>{{s.City}}</td>
+                <td>{{s.State}}</td>
+
+            
+            </tr>
+        </table>
+    </div>
+        
+</body>
+        
+       
+    
+        
+    
      
      

@@ -1,28 +1,68 @@
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="collapse navbar-collapse" id="navbarNav" style="font-size: 20px; ">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a style="color: whitesmoke;" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="nav-item active">
+                <a style="color: whitesmoke;"class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
+            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="nav-item active">
+                <a  style="color: whitesmoke;" class="nav-link" href="#">Contact<span class="sr-only">(current)</span></a>
+            </li>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="topnav-right">
+                <li class="nav-item active">
+                    <a  style="color: whitesmoke;" class="nav-link" href="AdminLogin">Logout<span class="sr-only">(current)</span></a>
+                </li>
+        </div>
+            
+            
+          </ul>
+        </div>
+      </nav>
         <br>
-        <button type="submit" class="btn btn-dark btn-lg"><a style="color: white;" routerLink="/add" routerLinkActive="active">Add a question</a></button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-dark btn-lg"><a style="color: white;" routerLink="/add" routerLinkActive="active">Add a question</a></button>
         <br><br>
         <table class="table">
         
             
             <tbody>
+                <tr>
+                    <th>Question No</th>
+                    <th>Question</th>
+                    <th>Option 1</th>
+                    <th>Option 2</th>
+                    <th>Option 3</th>
+                    <th>Option 4</th>
+                    <th>Correct Ans</th>
+                    <th>Delete</th>
+                </tr>
                 <tr *ngFor="let Q of Questions">
+                    
                     <td>{{Q.Question_id}}</td>
                     <td>{{Q.Question1}}</td>
                     <td>{{Q.Option_1}}</td>
                     <td>{{Q.Option_2}}</td>
                     <td>{{Q.Option_3}}</td>
                     <td>{{Q.Option_4}}</td>
+                    <td>{{Q.Correct_answer}}</td>
                     
                     
                 <td> <button type="button" class="btn btn-dark btn-lg" (click)="deleteQuestion(Q.Question_id)">Remove</button></td>
                     
-                    <td>
-                        
                     
-                    
-                    </td>
-                
                     
                 
                 </tr>

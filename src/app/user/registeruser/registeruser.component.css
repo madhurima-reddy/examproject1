@@ -1,17 +1,21 @@
 body {
-    background: url('src\assets\signup-bg.jpg') fixed;
+    background: url('src\assets\School-Math-scaled.jpg') fixed;
    background-size: cover;
+  
+   
 }
 
 *[role="form"] {
    max-width: 450px;
    padding: 15px;
-   padding-top: 10px;
+   
    margin: 0 auto;
    border-radius: 0.3em;
-   background-color: white;
+   background-color: whitesmoke;
    padding-right: 50px;
    padding-left:50px;
+   
+
   
       
    

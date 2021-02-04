@@ -1,0 +1,10 @@
+body{
+    background: url('src\assets\photo-1518172001620-cd0e03e41ff4.jpg') fixed;
+    
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:100vh;
+    font-size: 15px;
+
+    
+    }

@@ -1,7 +1,9 @@
-import { Adminlogin } from 'src/app/adminlogin';
-import { UserserviceService } from 'src/app/userservice.service';
-import { Userlogin } from 'src/app/userlogin';
+import { Adminlogin } from 'src/app/classes/adminlogin';
+import { UserserviceService } from 'src/app/services/userservice.service';
+import { Userlogin } from 'src/app/classes/userlogin';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute,Router} from '@angular/router';
+import { IUser } from 'src/app/classes/iuser';
 
 
 
@@ -11,22 +13,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./userlogin.component.css']
 })
 export class UserloginComponent implements OnInit {
-  cred: Userlogin= new Userlogin();
+  cred: IUser= new IUser();
 
-  constructor(private regService : UserserviceService) { }
+  constructor(private regService : UserserviceService,private route: Router) { }
 
   ngOnInit(): void {
   }
   OnSubmit(){
     this.regService.Userlogin(this.cred).subscribe((data)=>{
-      if(data==1)
+      if(data!=null)
       {
         alert("Login Successful");
+        
+        this.route.navigate(['/courses']);
+        sessionStorage.setItem('userid',this.cred.User_id.toString());
+        
       }
       else{
         alert("Invalid Login");
       }
     })
-  }
 
+}
 }

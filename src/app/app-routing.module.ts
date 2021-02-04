@@ -6,25 +6,41 @@ import{DisplayquestionComponent} from './admin/displayquestion/displayquestion.c
 import{HomepageComponent} from './homepage/homepage.component';
 import { AdminloginComponent } from './admin/adminlogin/adminlogin.component';
 import {AdminpageComponent } from './admin/adminpage/adminpage.component';
-import {ViewQuestionsComponent} from './admin/view-questions/view-questions.component';
+
 import { SearchreportsComponent } from './admin/searchreports/searchreports.component';
 import { RegisteruserComponent } from './user/registeruser/registeruser.component';
 import { UserloginComponent } from './user/userlogin/userlogin.component';
-import {DisplayreportsComponent} from "./admin/displayreports/displayreports.component";
+
+import {TestComponent} from './user/test/test.component';
+import {StarttestComponent} from './user/starttest/starttest.component';
+import {CoursesComponent} from './courses/courses.component';
+import {CoursesInfoComponent} from './courses-info/courses-info.component';
+import { HomeComponent } from './home/home.component';
+import { ReportCardComponent } from './report-card/report-card.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 
 const routes: Routes = [
   {path:'remove',component:RemovequestionComponent},
   {path:'add',component:AddquestionComponent},
-  {path:'',component:SearchreportsComponent},
-  {path:"displayreports",component:DisplayreportsComponent},
+  {path:'',component:HomepageComponent},
+  {path:'about',component:AboutusComponent},
+  {path:'contact',component:ContactComponent},
+  {path:'searchreports',component:SearchreportsComponent},  
   {path:"AdminLogin",component:AdminloginComponent},
   {path:"AdminPage",component:AdminpageComponent},
   {path:"UserLogin",component:UserloginComponent},
   {path:"ViewQuestions",component:DisplayquestionComponent},
   {path:'display',component:DisplayquestionComponent},
-  {path:'registeruser',component:RegisteruserComponent}
+  {path:'registeruser',component:RegisteruserComponent},
+  {path:'test', component:TestComponent},
+  {path:'startexam/:Course_id',component:StarttestComponent},
+  {path:'courses/:Course_id',component:CoursesComponent},
+  {path:'coursesinfo',component:CoursesInfoComponent},
+  {path: 'test/:Course_id', component:TestComponent } ,
+  {path:'courses',component:CoursesComponent}
 
 ];
 

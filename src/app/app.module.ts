@@ -13,11 +13,16 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { AdminloginComponent } from './admin/adminlogin/adminlogin.component';
 import { AdminpageComponent } from './admin/adminpage/adminpage.component';
-import { ViewQuestionsComponent } from './admin/view-questions/view-questions.component';
+
 import { SearchreportsComponent } from './admin/searchreports/searchreports.component';
 import { RegisteruserComponent } from './user/registeruser/registeruser.component';
 import { UserloginComponent } from './user/userlogin/userlogin.component';
-import { DisplayreportsComponent } from './admin/displayreports/displayreports.component';
+import {StarttestComponent} from './user/starttest/starttest.component';
+import {TestComponent} from './user/test/test.component';
+import {CoursesComponent} from './courses/courses.component';
+import {CoursesInfoComponent} from './courses-info/courses-info.component';
+import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -29,11 +34,18 @@ import { DisplayreportsComponent } from './admin/displayreports/displayreports.c
     AboutusComponent,
     AdminloginComponent,
     AdminpageComponent,
-    ViewQuestionsComponent,
+    StarttestComponent,
+    TestComponent,
+    CoursesComponent,
+    CoursesInfoComponent,
+    
     SearchreportsComponent,
     RegisteruserComponent,
     UserloginComponent,
-    DisplayreportsComponent
+    HomeComponent,
+    ContactComponent,
+   
+    
   ],
   imports: [
     BrowserModule,

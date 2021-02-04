@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminserviceService } from 'src/app/adminservice.service';
-import { Adminlogin } from 'src/app/adminlogin';
+import { AdminserviceService } from 'src/app/services/adminservice.service';
+import { Adminlogin } from 'src/app/classes/adminlogin';
 import { ActivatedRoute,Router} from '@angular/router';
 
 @Component({

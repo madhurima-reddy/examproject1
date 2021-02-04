@@ -1,12 +1,12 @@
 body {
   margin: 0;
   padding: 0;
-  background: url('src\assets\studyon_header_20161.jpg') fixed;
+  background: url('src\assets\signup-bg.jpg') fixed;
   background-size: cover;
   height: 100vh;
 }
 #login .container #login-row #login-column #login-box {
-  margin-top: 220px;
+  margin-top: 200px;
   max-width: 600px;
   height: 350px;
   border: 1px solid #9C9C9C;
@@ -21,4 +21,11 @@ body {
 #login .container #login-row #login-column #login-box #login-form #register-link {
   margin-top: -85px;
 
+}
+li{
+  color: whitesmoke;
+}
+
+.topnav-right {
+  float: right;
 }

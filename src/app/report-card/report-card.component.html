@@ -1,0 +1,29 @@
+
+<div class="container">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+               
+
+
+                <th>Course Name</th>
+                <th>Level1 Marks</th>
+                <th>Level2 Marks</th>
+                <th>Level3 Marks</th>
+                <th>Test Date</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let report of reports">
+                <td>{{report.Course.Course_name}}</td>
+                <td>{{report.Level_1_Marks}}</td>
+                <td>{{report.Level_2_Marks}}</td>
+                <td>{{report.Level_3_Marks}}</td>
+                <td>{{report.Test_Date | date:'shortDate'}}</td>
+
+
+            </tr>
+        </tbody>
+    </table>
+</div>

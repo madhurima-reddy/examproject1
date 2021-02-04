@@ -1,5 +1,22 @@
 body{
-    background:skyblue;
+    background: url('src\assets\School-Math-scaled.jpg') fixed;
+    /* background:skyblue; */
     background-size: cover;
-
 }
+
+table {
+    font-family: arial, sans-serif;
+    
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:whitesmoke;
+    
+  }
+  td, th {
+    
+    border: 1px solid lightgray;
+    text-align: left;
+    padding: 8px;
+  }
+  
