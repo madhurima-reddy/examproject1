@@ -16,9 +16,9 @@ export class ReportCardComponent implements OnInit {
   constructor(private reportservice: ReportCardServiceService) { }
 
   ngOnInit(): void {
-    this.session="1"
+    this.session=sessionStorage.getItem('userid')
     //sessionStorage.getItem('userid')
-  this.reportservice.ReportCard(1).subscribe(data=>{
+  this.reportservice.ReportCard(this.session).subscribe(data=>{
     this.reports=data
     console.log(data)
   })

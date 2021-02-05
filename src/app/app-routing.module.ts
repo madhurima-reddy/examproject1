@@ -26,6 +26,7 @@ const routes: Routes = [
   {path:'remove',component:RemovequestionComponent},
   {path:'add',component:AddquestionComponent},
   {path:'',component:HomepageComponent},
+  {path:'homepage',component:HomepageComponent},
   {path:'about',component:AboutusComponent},
   {path:'contact',component:ContactComponent},
   {path:'searchreports',component:SearchreportsComponent},  

@@ -24,6 +24,7 @@ import {CoursesComponent} from './courses/courses.component';
 import {CoursesInfoComponent} from './courses-info/courses-info.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
+import {ReportCardComponent} from './report-card/report-card.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ContactComponent } from './contact/contact.component';
     UserloginComponent,
     HomeComponent,
     ContactComponent,
+    ReportCardComponent
    
     
   ],

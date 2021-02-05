@@ -1,39 +1,24 @@
 
 <body >
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        <div class="collapse navbar-collapse" id="navbarNav" style="font-size: 20px; ">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a style="color: whitesmoke;" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <li class="nav-item active">
-                <a style="color: whitesmoke;"class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
-            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <li class="nav-item active">
-                <a  style="color: whitesmoke;" class="nav-link" href="#">Contact<span class="sr-only">(current)</span></a>
-            </li>
-            
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="topnav-right">
-                <li class="nav-item active">
-                    <a  style="color: whitesmoke;" class="nav-link" href="UserLogin">Logout<span class="sr-only">(current)</span></a>
-                </li>
+  <div class="w3-top" style="font-size: 15px; ">
+    <div class="w3-bar w3-white w3-card" id="myNavbar" style="padding: 10px;">
+        <a href="#home" class="w3-bar-item w3-button w3-wide"><strong>Welcome to the TECHNO WRITE</strong></a>
+        <!-- Right-sided navbar links -->
+        <div class="w3-right w3-hide-small">
+            <a href="#" class="w3-bar-item w3-button" routerLink="/homepage" routerLinkActive="active">HOME</a>
+            <a href="#about" class="w3-bar-item w3-button" routerLink="/about" routerLinkActive="active">ABOUT</a>                
+            <a href="#contact" class="w3-bar-item w3-button" routerLink="/contact" routerLinkActive="active"><i class="fa fa-envelope" ></i> CONTACT</a>
+            <a href="#UserLogin" class="w3-bar-item w3-button" routerLink="/UserLogin" routerLinkActive="active">LOGOUT</a>  
         </div>
-            
-            
-          </ul>
-        </div>
-      </nav>
+        <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+            onclick="w3_open()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+</div>
+      <br>
       <br>
     <form  style="padding-left: 28px;" class="form-horizontal" class="form" #userform='ngForm'  (ngSubmit)='startTest()'>
         <!-- <h1 style="text-align: center; color: white;">Quiz</h1> -->
@@ -47,7 +32,7 @@
         <ng-template #Q> 
             <div style="text-align:left; padding-right: 35%;" >
                 
-                <div class="py-2 h25" style="font: size 19px;" style="text-align:left;"><b> {{Questions[QNo]?. Question_No}} <span>. </span>{{Questions[QNo]?.Question1}}</b></div><br>
+                <div class="py-2 h25" style="font: size 10px;" style="text-align:left;"><b> {{Questions[QNo]?. Question_No}} <span>. </span>{{Questions[QNo]?.Question1}}</b></div><br>
               
                 <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3 form-group" style="text-align: left;" id="options">
                      <label class="options"><input type="radio" name="a" value ="1" required #a="ngModel" [(ngModel)] = "r1"> {{Questions[QNo]?.Option_1}}  <span class="checkmark"></span>
@@ -73,8 +58,8 @@
              
                <br> <input type="button"  class="btn btn-dark btn-success"  value="Previous" (click)="Previous()">
                &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  
-               &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; 
-                &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;
+                 &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; 
+                
                <input type="button" class="btn btn-dark btn-success"   style="padding-right: 4%; vertical-align: middle;"  [disabled]="QNo>=9 ? true : false" value="Next" (click)="Next()" >
              
                <input type="button" class="btn btn-dark btn-success poz"  value="Submit Test" (click)="submitTest()">
