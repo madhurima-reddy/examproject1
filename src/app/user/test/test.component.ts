@@ -159,7 +159,7 @@ submitTest()
     this.EndTest()
      
     }
-    this.route.navigate(['/courses']);
+    
 
 }
 
