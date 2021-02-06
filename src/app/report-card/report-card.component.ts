@@ -24,6 +24,11 @@ export class ReportCardComponent implements OnInit {
   })
 
 
+
   }
+  Logout()
+   {   
+    sessionStorage.removeItem('userid')
+   }
 
 }

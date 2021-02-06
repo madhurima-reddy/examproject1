@@ -6,6 +6,8 @@ import { Icourse } from 'src/app/classes/icourse';
 import { ReportCard } from 'src/app/classes/report-card';
 
 
+
+
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
@@ -109,15 +111,10 @@ Next()
   this.Reset()
 }
 
-submitTest()
+EndTest()
 {
-  let confirm1 =  confirm("Are you sure you want to submit the test?")
 
-    if(confirm1){
-
-    
-// this.testStatus=false;
-      if(this.isAnswered())
+  if(this.isAnswered())
       {
           this.Marks=this.Marks+1;
           
@@ -137,11 +134,33 @@ submitTest()
          
       }
 
-// this.prompt()
 this.StopTimer()
 this.CalculateMarks()
 this.TestStatus = false;
-}
+    }
+  
+submitTest()
+{
+  let confirm1;
+
+  if(this.time===3600)
+  {
+    alert("Sorry the time has elapsed!")
+    this.EndTest()
+    
+  }
+  else{
+    confirm1 =  confirm("Are you sure you want to submit the test?")
+
+  }
+
+    if(confirm1){
+
+    this.EndTest()
+     
+    }
+    this.route.navigate(['/courses']);
+
 }
 
 
@@ -155,16 +174,17 @@ startTimer1() {
   
   console.log("=====>");
   this.interval = setInterval(() => {
-    if(this.time ===30)
+    if(this.time === 3600)
     {
-      
       console.log(this.time)
        this.submitTest()
+       
     }
     if (this.time === 0) {
       
       this.time++;
-    } else {
+    }
+     else {
       this.time++;
     }
     this.display=this.transform( this.time)
@@ -207,10 +227,16 @@ Reset()
       }
       if(this.Level_id===3)
       {
+        
         this.FinalStatus=true;
-       
-        this.GenerateReport()
-      }
+        this.Message = this.ResultStatus? "Congratulations! You have cleared all the levels!": this.Message;
+       this.GenerateReport()
+       }
+
+      // if(this.Level_id>3)
+      // {
+      //   this.Message="You have succesfully completed you test. Check your reports or Logout!"
+      // }
       
     }
   
@@ -221,6 +247,11 @@ Reset()
       this.Level_id=this.Level_id+1;
       this.startTest()
       }
+      // if(this.Level_id>=4)
+      // {
+      //   this.ResultStatus=false;
+      //  this.EndTest()
+      // }
      
     }
  GenerateReport()
@@ -233,6 +264,10 @@ Reset()
      this.reportcard.Level_3_Marks = this.level3_Marks
      this.reportcard.Test_Date = this.Today
      this.quizservice.postreport(this.reportcard).subscribe()
+   }
+   Logout()
+   {   
+    sessionStorage.removeItem('userid')
    }
  
     

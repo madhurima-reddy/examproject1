@@ -9,6 +9,6 @@ export class IUser {
     State:string;
     City:string;
     Qualification:string;
-    Year_Of_Passing:number;
+    Year_Of_Completion:number;
 
 }

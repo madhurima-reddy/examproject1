@@ -8,7 +8,7 @@
             <a href="#" class="w3-bar-item w3-button" routerLink="/homepage" routerLinkActive="active">HOME</a>
             <a href="#about" class="w3-bar-item w3-button" routerLink="/about" routerLinkActive="active">ABOUT</a>                
             <a href="#contact" class="w3-bar-item w3-button" routerLink="/contact" routerLinkActive="active"><i class="fa fa-envelope" ></i> CONTACT</a>
-            <a href="#UserLogin" class="w3-bar-item w3-button" routerLink="/UserLogin" routerLinkActive="active">LOGOUT</a>  
+            <a href="#UserLogin" class="w3-bar-item w3-button" routerLink="/UserLogin" routerLinkActive="active" (click)="Logout()">LOGOUT</a>  
         </div>
         <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -45,8 +45,27 @@
        <br>
         <button type="submit"[routerLink]="['/test/',courseid]" class="btn btn-dark btn-success"> START EXAM</button> 
        
-  
+  <br><br><br>
+  <br><br>
+
   </div>
+
+  <footer class="bg-light text-center text-md-start " style="position:relative;width: 100%; bottom:0; background-color:lightgray ;">
+    <!-- Copyright -->
+    <div class="w3-medium w3-padding-30 bg dark">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-snapchat w3-hover-opacity"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+    
+    <br>
+      © 2020 Copyright:
+      <a class="text-dark" href="https://mdbootstrap.com/">Techno Write</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
 </body>
   
   

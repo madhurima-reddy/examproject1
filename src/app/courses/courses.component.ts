@@ -24,6 +24,11 @@ export class CoursesComponent implements OnInit {
     })
   
   }
+  Logout()
+   {   
+    sessionStorage.removeItem('userid')
+   }
+ 
   // onSubmit(){
    
   //   for(var l of this.courses)

@@ -4,6 +4,7 @@ body {
   background: url('src\assets\signup-bg.jpg') fixed;
   background-size: cover;
   height: 100vh;
+  
 }
 #login .container #login-row #login-column #login-box {
   margin-top: 200px;

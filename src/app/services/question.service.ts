@@ -11,8 +11,8 @@ import{Report} from 'src/app/classes/report' ;
   providedIn: 'root'
 })
 export class QuestionService {
-  url='http://localhost:51403/api/Questions';
-  url2='http://localhost:51403/api';
+  url='http://localhost:65038/api/Questions';
+  url2='http://localhost:65038/api';
   httpOptions={
     headers:new HttpHeaders({'Content-Type':'application/json'})
 
@@ -46,7 +46,7 @@ export class QuestionService {
     ViewResult(Repo:Report):Observable<Searchstudent[]>{
 
       return this.http.get<Searchstudent[]>(this.url2+"/Reports?"+"state="+Repo.State+"&city="
-      +Repo.City+"&Course_name="+Repo.Course_name+"&marks=18");
+      +Repo.City+"&Course_name="+Repo.Course_name+"&marks="+Repo.Minimum_marks);
     
     }
        

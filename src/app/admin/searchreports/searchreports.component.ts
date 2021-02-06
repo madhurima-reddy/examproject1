@@ -48,6 +48,8 @@ constructor(private route: Router,private router:ActivatedRoute,private question
               this.students = data;                                   
             }
           });
+  
+ 
   }
 
 
@@ -62,6 +64,11 @@ constructor(private route: Router,private router:ActivatedRoute,private question
         this.users = data;
     }) 
   }
+  Logout()
+  {   
+   sessionStorage.removeItem('userid')
+  }
+
 
 
 }

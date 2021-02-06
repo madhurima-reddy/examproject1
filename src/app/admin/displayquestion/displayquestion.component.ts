@@ -29,5 +29,10 @@ export class DisplayquestionComponent implements OnInit {
       
     });
   }
+  Logout()
+   {   
+    sessionStorage.removeItem('userid')
+   }
+ 
 }
 

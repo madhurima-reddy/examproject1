@@ -22,6 +22,11 @@ export class StarttestComponent implements OnInit {
     // })  
       this.courseid=this.router.snapshot.params['Course_id']
   }
+  Logout()
+   {   
+    sessionStorage.removeItem('userid')
+   }
+ 
 
 
 }

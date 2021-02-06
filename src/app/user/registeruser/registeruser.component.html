@@ -26,15 +26,7 @@
         <form class="form-horizontal" role="form" #userform='ngForm'(ngSubmit)='saveUser(user)'>
             <h3 style="text-align: center;">Register user</h3>
 
-            <div class="form-group" [class.has.error]="namecontrol.touched && namecontrol.invalid">
-                
-                <div class="col-sm-9" class="b">
-                    <input type="text" size="80%" id="id" placeholder="User id" class="form-control" name= "userid" required autofocus [(ngModel)]='user.User_id'  #namecontrol='ngModel'/>
-                </div>
-                <span class='help-block alert-danger' *ngIf='namecontrol.touched && namecontrol.invalid'>
-                 Id cannot be blank
-                </span>                
-            </div>
+            
 
             <div class="form-group" [class.has.error]="namecontrol.touched && namecontrol.invalid">
                
@@ -58,12 +50,13 @@
             <div class="form-group" [class.has.error]="emailcontrol.touched && emailcontrol.invalid">
                 
                 <div class="col-sm-9" class="b">
-                    <input type='text' id='email' placeholder="Email" name='email' class="form-control" required [(ngModel)]='user.Email' #emailcontrol='ngModel'/>
+                    <input type='email' id='email' placeholder="Email" name='email'ngModel [email]="true" class="form-control" required [(ngModel)]='user.Email' #emailcontrol='ngModel'/>
                 </div>
                 <span class='help-block alert-danger' *ngIf='emailcontrol.touched && emailcontrol.invalid'>
-                    Email cannot be blank
+                    Email cannot be blank or invalid
                 </span>
             </div>
+
             <div class="form-group" [class.has.error]="passcontrol.touched && passcontrol.invalid">
                
                 <div class="col-sm-9" class="b">
@@ -129,7 +122,7 @@
             <div class="form-group"  [class.has.error]="yearcontrol.touched && yearcontrol.invalid">
                 
                 <div class="col-sm-9" class="b">
-                    <input type="text" id="yearOfPassing" class="form-control" name='year' placeholder="Year of passing" required [(ngModel)]='user.Year_Of_Passing' #yearcontrol='ngModel'/>
+                    <input type="text" id="yearOfPassing" class="form-control" name='year' placeholder="Year of passing" required [(ngModel)]='user.Year_Of_Completion' #yearcontrol='ngModel'/>
 
                 </div>
                 <span class='help-block alert-danger' *ngIf='yearcontrol.touched && yearcontrol.invalid'>
@@ -144,4 +137,21 @@
             
         </form>
     </div>
+
+    <footer class="bg-light text-center text-md-start " style="position:relative;width: 100%;bottom:0; background-color:lightgray ;">
+        <!-- Copyright -->
+        <div class="w3-medium w3-padding-30 bg dark">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        
+        <br>
+          © 2020 Copyright:
+          <a class="text-dark" href="https://mdbootstrap.com/">Techno Write</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
 </body>  

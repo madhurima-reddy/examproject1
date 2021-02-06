@@ -16,7 +16,7 @@ export class AddquestionComponent implements OnInit {
   Courseid: number;
 
   Question:IQuestion={
-    Question_id:null,
+    Question_id:10,
     Course_id:null,
     Level_id:null,
     Question_No:null,

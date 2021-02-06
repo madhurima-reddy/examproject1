@@ -11,7 +11,7 @@ import { IUser } from 'src/app/classes/iuser';
 export class UserserviceService {
 
   constructor(private httpClient: HttpClient) { }
-  private apiServer = "http://localhost:51403/api";
+  private apiServer = "http://localhost:65038/api";
 httpOptions = {
 headers: new HttpHeaders({
 'Content-Type': 'application/json'

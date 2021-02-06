@@ -9,7 +9,7 @@ import { Icourse } from '../classes/icourse';
 })
 export class QuizService {
 
-  private apiServer = "http://localhost:51403/api";
+  private apiServer = "http://localhost:65038/api";
   httpOptions={
     headers:new HttpHeaders({'Content-Type':'application/json'})
 };

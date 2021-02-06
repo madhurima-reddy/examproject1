@@ -4,7 +4,7 @@
             <a href="#home" class="w3-bar-item w3-button w3-wide"><strong>Welcome to the TECHNO WRITE</strong></a>
             <!-- Right-sided navbar links -->
             <div class="w3-right w3-hide-small">
-                <a href="#" class="w3-bar-item w3-button" routerLink="/homepage" routerLinkActive="active">HOME</a>
+                <a href="#home" class="w3-bar-item w3-button" routerLink="/homepage" routerLinkActive="active">HOME</a>
                 <a href="#about" class="w3-bar-item w3-button" routerLink="/about" routerLinkActive="active">ABOUT</a>                
                 <a href="#contact" class="w3-bar-item w3-button" routerLink="/contact" routerLinkActive="active"><i class="fa fa-envelope" ></i> CONTACT</a>
                   
@@ -35,14 +35,16 @@
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-dark">Password:</label><br>
-                                <input type="text" name="password" id="password" class="form-control" id="password"
+                                <input type="password" name="password" id="password" class="form-control" id="password"
                                     #password="ngModel" [(ngModel)]=cred.Password required>
 
                             </div>
                             <div class="form-group">
                                 <label for="remember-me" class="text-dark"><span>Remember me</span> <span><input
                                             id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                                <button type="submit" name="submit" class="btn btn-dark btn-md"  value="submit">submit</button>
+                                <button type="submit" name="submit" class="btn btn-dark btn-md"  value="submit">Submit</button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <span class = "psw"><a href="/registeruser">New Registration?</a></span> 
 
                             </div>
@@ -54,4 +56,21 @@
             </div>
         </div>
     </div>
+
+    <footer class="bg-light text-center text-md-start " style="position:fixed;width: 100%;bottom:0; background-color:lightgray ;">
+        <!-- Copyright -->
+        <div class="w3-medium w3-padding-30 bg dark">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        
+        <br>
+          © 2020 Copyright:
+          <a class="text-dark" href="https://mdbootstrap.com/">Techno Write</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
 </body>

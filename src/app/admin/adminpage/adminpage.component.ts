@@ -11,5 +11,10 @@ export class AdminpageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  Logout()
+   {   
+    sessionStorage.removeItem('userid')
+   }
+ 
 
 }

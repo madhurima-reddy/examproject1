@@ -4,7 +4,7 @@ body {
   background: url('src\assets\School-Math-scaled.jpg') fixed;
   /* background:skyblue; */
   background-size: cover;
-  height: 150vh;
+  height: 200vh;
   
 }
 .container{
@@ -35,6 +35,6 @@ table {
     padding: 8px;
   }
   
-  /* tr:nth-child(even) {
+tr:nth-child(even) {
     background-color: #dddddd;
-  } */
+  } 
