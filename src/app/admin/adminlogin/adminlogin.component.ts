@@ -19,15 +19,17 @@ export class AdminloginComponent implements OnInit {
     this.regService.AdminLogin(this.credentials).subscribe((data)=>{ 
       if(data==1)
       {
-        alert("Login successful");
+        //alert("Login successful");
         this.route.navigateByUrl('/AdminPage');
       }
       else
       {
-        alert("Invalid login");
+        alert("please Check the credentials");
        // this.router.navigateByUrl('UserLogin');
       }
      })
+     
+        
   }
 
 }

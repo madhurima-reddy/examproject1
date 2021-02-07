@@ -13,7 +13,7 @@ export class AdminpageComponent implements OnInit {
   }
   Logout()
    {   
-    sessionStorage.removeItem('userid')
+    sessionStorage.removeItem('Admin_id')
    }
  
 

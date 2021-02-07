@@ -35,7 +35,7 @@ export class UserloginComponent implements OnInit {
         
       }
       else{
-        alert("Invalid Login");
+        alert("please check the credentials");
       }
     })
 

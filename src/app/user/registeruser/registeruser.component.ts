@@ -30,7 +30,7 @@ export class RegisteruserComponent implements OnInit {
   saveUser(user:IUser){debugger;​​​​    
     this.userservice.addUser(this.user).subscribe(()=>
     {​​​​      
-      alert("Record Added");     
+      alert("Registered successfully.Login to continue");     
      this.route.navigate(['UserLogin']);   
    }​​​​,error=>{
     alert(error.Message);
