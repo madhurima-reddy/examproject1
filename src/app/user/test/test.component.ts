@@ -4,6 +4,7 @@ import {QuizService} from 'src/app/services/quiz.service';
 import {IQuestion} from 'src/app/classes/iquestion';
 import { Icourse } from 'src/app/classes/icourse';
 import { ReportCard } from 'src/app/classes/report-card';
+import { IUser } from 'src/app/classes/iuser';
 
 
 
@@ -16,6 +17,7 @@ import { ReportCard } from 'src/app/classes/report-card';
 export class TestComponent implements OnInit {
   
   courses : Icourse[] = [];
+  user:IUser[]=[];
   Questions : IQuestion[] = [];
   reportcard : ReportCard;
   QNo:number;
@@ -143,7 +145,7 @@ submitTest()
 {
   let confirm1;
 
-  if(this.time===3600)
+  if(this.time===600)
   {
     alert("Sorry the time has elapsed!")
     this.EndTest()
@@ -174,7 +176,7 @@ startTimer1() {
   
   console.log("=====>");
   this.interval = setInterval(() => {
-    if(this.time === 3600)
+    if(this.time === 600)
     {
       console.log(this.time)
        this.submitTest()
@@ -257,7 +259,7 @@ Reset()
  GenerateReport()
    {
      this.reportcard=new ReportCard()
-     this.reportcard.User_id=1
+     this.reportcard.User_id = parseInt(sessionStorage.getItem('userid').toString())
      this.reportcard.Course_id= this.router.snapshot.params['Course_id']
      this.reportcard.Level_1_Marks = this.level1_Marks
      this.reportcard.Level_2_Marks = this.level2_Marks
